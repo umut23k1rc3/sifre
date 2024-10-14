@@ -1,0 +1,24 @@
+import random
+
+# 1. Karakter türlerini belirleyelim
+kucuk_harfler = "abcdefghijklmnopqrstuvwxyz"
+buyuk_harfler = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+rakamlar = "0123456789"
+semboller = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
+
+# 2. Kullanıcıya seçenekler sunalım
+def kullanici_secimleri():
+    while True:
+        try:
+            parola_uzunlugu = int(input("Parola uzunluğunu girin (en az 6 karakter): "))
+            if parola_uzunlugu < 6:
+                print("Parola en az 6 karakter uzunluğunda olmalıdır. Lütfen tekrar deneyin.")
+                continue
+        except ValueError:
+            print("Geçerli bir sayı girin.")
+            continue
+        
+        # Kullanıcıdan karakter türlerini seçmesini isteyelim
+        kucuk = input("Küçük harfler kullanılsın mı? (e/h): ").lower() == "e"
+        buyuk = input("Büyük harfler kullanılsın mı? (e/h): ").lower() == "e"
+        rakam = input("Rakamlar kullanıls
